@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Imagen de Fondo con Header</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .background-image {
+            position: fixed;
+            top: -40px; /* Adjust this value to move the image down */
+            left: 0;
+            width: 100%;
+            height: calc(100% + 100px); /* Adjust this value accordingly */
+            object-fit: cover;
+            z-index: -1;
+        }
+        .button-container {
+            position: absolute;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .retos {
+            top: 60px; /* Adjust as needed */
+            left: 80px; /* Adjust as needed */
+        }
+        .create {
+            top: 330px; /* Adjust as needed */
+            left: 80px; /* Adjust as needed */
+        }
+        .videos {
+            top: 60px; /* Adjust as needed */
+            left: 1295px; /* Adjust as needed */
+        }
+        .faq {
+            top: 330px; /* Adjust as needed */
+            left: 1270px; /* Adjust as needed */
+        }
+        .nav-item {
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 90px 90px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            display: block;
+            border-radius: 5px;
+        }
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+        }
+        .text-background {
+            background: rgba(0, 0, 0, 0.2); /* Dark background for text */
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: center;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='Images/fondoindex2_3.png') }}" alt="Background Image" class="background-image">
+    
+    <div class="button-container retos">
+        <div class="text-background">
+            <p>Retos</p>
+        </div>
+        <a href="{{ url_for('RetoPrimero') }}" class="nav-item btn btn-primary"></a>
+    </div>
+    <div class="button-container create">
+        <div class="text-background">
+            <p>Inicio de Sesión</p>
+        </div>
+        <a href="{{ url_for('create') }}" class="nav-item btn btn-primary"></a>
+    </div>
+    <div class="button-container videos">
+        <div class="text-background">
+            <p>Videos</p>
+        </div>
+        <a href="{{ url_for('Videos') }}" class="nav-item btn btn-primary"></a>
+    </div>
+    <div class="button-container faq">
+        <div class="text-background">
+            <p>Preguntas Frecuentes</p>
+        </div>
+        <a href="{{ url_for('FAQ') }}" class="nav-item btn btn-primary"></a>
+    </div>
+
+</body>
+</html>
+
+{% include 'footer.html' %}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Inicio</title>
+    <style>
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+            padding: 1rem;
+            width: 100%; /* Asegura que la barra ocupe el 100% del ancho */
+            border: 2px solid #555;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navbar-brand img,
+        .navbar-right img {
+            height: 150px; /* Tamaño de las imágenes */
+            width: 200px;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.5rem; /* Tamaño de la fuente */
+            margin: 10px; /* Añadir margen entre los botones */
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s; /* Transición para el efecto hover */
+        }
+        .navbar-nav .nav-link:hover {
+            background-color: white; /* Cambiar el fondo al pasar el cursor */
+            color: black !important; /* Cambiar el color del texto al pasar el cursor */
+            border-radius: 5px; /* Bordes redondeados para el efecto hover */
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='Images/EMCOGCIBER.png') }}" alt="Logo Izquierda">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('index') }}"> Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('create') }}"> Registro de Usuarios <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('RetoPrimero') }}"> Retos <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Constancia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('Videos') }}">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('FAQ') }}">Preguntas Frecuentes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <img src="{{ url_for('static', filename='Images/EMCOGCIBER.png') }}" alt="Logo Derecha">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Contenido de tu página -->
+    </div>
+
+</body>
+</html>
